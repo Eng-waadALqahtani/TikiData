@@ -1,0 +1,424 @@
+{
+  "matches": [
+    {
+      "match_id": 1,
+      "competition": "Saudi Pro League",
+      "home_team": "Al Hilal",
+      "away_team": "Al Ittihad",
+      "date": "2025-01-07",
+      "venue": "Kingdom Arena",
+      "referee": "Jesus Valenzuela (Venezuela)",
+      "scoreline": {
+        "half_time": "0-0",
+        "full_time": "1-1",
+        "after_extra_time": "2-2",
+        "penalty_shootout": "1-3"
+      },
+      "goals": [
+        {
+          "player": "K. Benzema",
+          "team": "Al Ittihad",
+          "time": "63'",
+          "assist": null,
+          "score": "0-1"
+        },
+        {
+          "player": "S. Al-Dawsari",
+          "team": "Al Hilal",
+          "time": "72'",
+          "assist": null,
+          "score": "1-1"
+        },
+        {
+          "player": "M. Leonardo",
+          "team": "Al Hilal",
+          "time": "101'",
+          "assist": "M. Al-Harbi",
+          "score": "2-1"
+        },
+        {
+          "player": "K. Benzema",
+          "team": "Al Ittihad",
+          "time": "114'",
+          "assist": null,
+          "score": "2-2"
+        }
+      ],
+      "penalty_shootout": {
+        "winner": "Al Ittihad",
+        "penalties": [
+          {
+            "team": "Al Hilal",
+            "player": "Kané",
+            "result": "Saved"
+          },
+          {
+            "team": "Al Ittihad",
+            "player": "K. Benzema",
+            "result": "Scored"
+          },
+          {
+            "team": "Al Hilal",
+            "player": "Leonardo",
+            "result": "Saved"
+          },
+          {
+            "team": "Al Ittihad",
+            "player": "Fabinho",
+            "result": "Scored"
+          },
+          {
+            "team": "Al Hilal",
+            "player": "S. Milinkovic-Savic",
+            "result": "Scored"
+          },
+          {
+            "team": "Al Ittihad",
+            "player": "Danilo",
+            "result": "Scored"
+          },
+          {
+            "team": "Al Hilal",
+            "player": "Malcom",
+            "result": "Saved"
+          }
+        ]
+      },
+      "lineups": {
+        "Al Hilal": {
+          "starting": [
+            {
+              "number": "37",
+              "name": "Y. Bounou",
+              "position": "GK"
+            },
+            {
+              "number": "5",
+              "name": "A. Al-Bulayhi",
+              "position": "DF"
+            },
+            {
+              "number": "3",
+              "name": "K. Koulibaly",
+              "position": "DF"
+            },
+            {
+              "number": "6",
+              "name": "Renan Lodi",
+              "position": "DF"
+            },
+            {
+              "number": "20",
+              "name": "J. Cancelo",
+              "position": "DF"
+            },
+            {
+              "number": "8",
+              "name": "R. Neves",
+              "position": "MF",
+              "subbed": 39
+            },
+            {
+              "number": "22",
+              "name": "S. Milinkovic-Savic",
+              "position": "MF"
+            },
+            {
+              "number": "77",
+              "name": "Malcom",
+              "position": "MF"
+            },
+            {
+              "number": "29",
+              "name": "S. Al-Dawsari",
+              "position": "FW",
+              "goal": 72
+            },
+            {
+              "number": "9",
+              "name": "A. Mitrovic",
+              "position": "FW",
+              "subbed": 10
+            },
+            {
+              "number": "99",
+              "name": "A. Al-Hamdan",
+              "position": "FW",
+              "subbed": 46
+            }
+          ],
+          "substitutes": [
+            {
+              "number": "21",
+              "name": "M. Al Owais"
+            },
+            {
+              "number": "87",
+              "name": "H. Tambakti"
+            },
+            {
+              "number": "28",
+              "name": "M. Kanno",
+              "subOn": 39
+            },
+            {
+              "number": "11",
+              "name": "M. Leonardo",
+              "subOn": 10,
+              "goal": 101
+            },
+            {
+              "number": "16",
+              "name": "N. Al Dawsari",
+              "subOn": 46
+            },
+            {
+              "number": "24",
+              "name": "M. Al-Harbi",
+              "subOn": 67,
+              "assist": 101
+            },
+            {
+              "number": "15",
+              "name": "M. Al Qahtani"
+            },
+            {
+              "number": "88",
+              "name": "H. Al Yami"
+            },
+            {
+              "number": "7",
+              "name": "K. Al Ghannam"
+            }
+          ],
+          "manager": "Jorge Jesus"
+        },
+        "Al Ittihad": {
+          "starting": [
+            {
+              "number": "1",
+              "name": "P. Rajkovic",
+              "position": "GK"
+            },
+            {
+              "number": "13",
+              "name": "M. Shanqeeti",
+              "position": "DF"
+            },
+            {
+              "number": "6",
+              "name": "S. Al-Mousa",
+              "position": "DF"
+            },
+            {
+              "number": "2",
+              "name": "D. Pereira",
+              "position": "DF"
+            },
+            {
+              "number": "15",
+              "name": "H. Kadesh",
+              "position": "DF"
+            },
+            {
+              "number": "8",
+              "name": "Fabinho",
+              "position": "MF"
+            },
+            {
+              "number": "7",
+              "name": "N. Kante",
+              "position": "MF"
+            },
+            {
+              "number": "10",
+              "name": "H. Aouar",
+              "position": "MF",
+              "subbed": 65
+            },
+            {
+              "number": "34",
+              "name": "S. Bergwijn",
+              "position": "FW",
+              "subbed": 75
+            },
+            {
+              "number": "9",
+              "name": "K. Benzema",
+              "position": "FW",
+              "goals": [
+                63,
+                114
+              ]
+            },
+            {
+              "number": "19",
+              "name": "M. Diaby",
+              "position": "FW",
+              "subbed": 60
+            }
+          ],
+          "substitutes": [
+            {
+              "number": "27",
+              "name": "F. Al Sagour"
+            },
+            {
+              "number": "80",
+              "name": "H. Al Ghamdi"
+            },
+            {
+              "number": "14",
+              "name": "A. Al Nashri",
+              "subOn": 75
+            },
+            {
+              "number": "22",
+              "name": "A. Al Bishi",
+              "subOn": 65
+            },
+            {
+              "number": "42",
+              "name": "M. Faqeehi"
+            },
+            {
+              "number": "33",
+              "name": "M. Al-Mahasneh"
+            },
+            {
+              "number": "21",
+              "name": "S. Al-Shehri",
+              "subOn": 60
+            },
+            {
+              "number": "77",
+              "name": "A. Hawsawi"
+            },
+            {
+              "number": "24",
+              "name": "A. Al-Obood"
+            }
+          ],
+          "manager": "Laurent Blanc"
+        }
+      }
+    },
+    {
+      "match_id": 2,
+      "competition": "Saudi Pro League",
+      "home_team": "Al-Orobah",
+      "away_team": "Al Hilal",
+      "date": "2025-01-14",
+      "scoreline": {
+        "half_time": "0-2",
+        "full_time": "0-5"
+      },
+      "goals": [
+        {
+          "player": "Malcom",
+          "team": "Al Hilal",
+          "time": "17'",
+          "score": "0-1"
+        },
+        {
+          "player": "S. Al-Dawsari",
+          "team": "Al Hilal",
+          "time": "34'",
+          "score": "0-2"
+        },
+        {
+          "player": "A. Mitrovic",
+          "team": "Al Hilal",
+          "time": "56'",
+          "score": "0-3"
+        },
+        {
+          "player": "S. Milinkovic-Savic",
+          "team": "Al Hilal",
+          "time": "71'",
+          "score": "0-4"
+        },
+        {
+          "player": "M. Leonardo",
+          "team": "Al Hilal",
+          "time": "88'",
+          "score": "0-5"
+        }
+      ]
+    },
+    {
+      "match_id": 3,
+      "competition": "Saudi Pro League",
+      "home_team": "Al Hilal",
+      "away_team": "Al-Wehda",
+      "date": "2025-01-21",
+      "scoreline": {
+        "half_time": "2-0",
+        "full_time": "4-1"
+      },
+      "goals": [
+        {
+          "player": "M. Leonardo",
+          "team": "Al Hilal",
+          "time": "7'",
+          "score": "1-0"
+        },
+        {
+          "player": "Malcom",
+          "team": "Al Hilal",
+          "time": "11'",
+          "score": "2-0"
+        },
+        {
+          "player": "Malcom",
+          "team": "Al Hilal",
+          "time": "82'",
+          "score": "3-0"
+        },
+        {
+          "player": "C. Goodwin",
+          "team": "Al-Wehda",
+          "time": "89'",
+          "score": "3-1"
+        },
+        {
+          "player": "A. Al-Hamdan",
+          "team": "Al Hilal",
+          "time": "90'+1'",
+          "score": "4-1"
+        }
+      ]
+    },
+    {
+      "match_id": 4,
+      "competition": "Saudi Pro League",
+      "home_team": "Al Qadisiya",
+      "away_team": "Al Hilal",
+      "date": "2025-01-27",
+      "scoreline": {
+        "half_time": "1-0",
+        "full_time": "2-1"
+      },
+      "goals": [
+        {
+          "player": "P. Aubameyang",
+          "team": "Al Qadisiya",
+          "time": "2'",
+          "score": "1-0"
+        },
+        {
+          "player": "M. Leonardo",
+          "team": "Al Hilal",
+          "time": "50'",
+          "score": "1-1"
+        },
+        {
+          "player": "P. Aubameyang",
+          "team": "Al Qadisiya",
+          "time": "90'+3'",
+          "score": "2-1"
+        }
+      ]
+    }
+  ]
+}

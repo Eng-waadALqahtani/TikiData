@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikiData - Request a Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #6028e4;
+            --secondary-color: #4d1fd6;
+            --gradient-start: #6028e4;
+            --gradient-end: #d019a9;
+            --background-color: #0c0931;
+            --card-bg-color: #121549;
+            --text-color: #ffffff;
+            --light-text: #e0e0ff;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-button {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .nav-button:hover {
+            background-color: rgba(96, 40, 228, 0.1);
+        }
+
+        .hero {
+            padding: 80px 0 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(96, 40, 228, 0.2) 0%, rgba(12, 9, 49, 0) 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--light-text);
+        }
+
+        .pricing-section {
+            padding: 60px 0 80px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--light-text);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .cta-button {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--text-color);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(96, 40, 228, 0.4);
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(96, 40, 228, 0.6);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-button.outline:hover {
+            background: rgba(96, 40, 228, 0.1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--text-color);
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+
+        .demo-form {
+            max-width: 600px;
+            margin: 50px auto 0;
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: rgba(12, 9, 49, 0.8);
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="logo-text">TikiData</div>
+                </div>
+                <div>
+                    <a href="/" class="back-to-home">
+                        <i class="fas fa-home"></i>
+                        Back Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Request a Demo for Your Team</h1>
+                <p>Choose the right plan to transform your team's performance with TikiData's AI-powered analytics, or schedule a custom demo tailored to your team's specific needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Starter</h3>
+                    <div class="price">﷼ 499<span>/month</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Basic team analysis</li>
+                        <li><i class="fas fa-check"></i> Post-game reports</li>
+                        <li><i class="fas fa-check"></i> Basic opponent analysis</li>
+                        <li><i class="fas fa-check"></i> 1 sport category</li>
+                        <li><i class="fas fa-check"></i> Up to 3 user accounts</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <a href="#demo-form" class="cta-button outline">Request Demo</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Professional</h3>
+                    <div class="price">﷼ 999<span>/month</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Advanced team analysis</li>
+                        <li><i class="fas fa-check"></i> Advanced game reports</li>
+                        <li><i class="fas fa-check"></i> In-depth opponent analysis</li>
+                        <li><i class="fas fa-check"></i> Lineup optimization</li>
+                        <li><i class="fas fa-check"></i> 2 sport categories</li>
+                        <li><i class="fas fa-check"></i> Up to 10 user accounts</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <a href="#demo-form" class="cta-button">Request Demo</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Enterprise</h3>
+                    <div class="price">﷼ 2,499<span>/month</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Full access to all analytics</li>
+                        <li><i class="fas fa-check"></i> Real-time game analysis</li>
+                        <li><i class="fas fa-check"></i> Strategic predictions</li>
+                        <li><i class="fas fa-check"></i> Custom AI training on your team</li>
+                        <li><i class="fas fa-check"></i> All sport categories</li>
+                        <li><i class="fas fa-check"></i> Unlimited user accounts</li>
+                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                    </ul>
+                    <a href="#demo-form" class="cta-button">Request Demo</a>
+                </div>
+            </div>
+
+            <div class="demo-form" id="demo-form">
+                <h2 class="form-title">Schedule Your Demo</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="team-name">Team Name</label>
+                        <input type="text" id="team-name" class="form-input" placeholder="Enter your team name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name">Contact Person</label>
+                        <input type="text" id="contact-name" class="form-input" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Preferred Package</label>
+                        <select id="package" class="form-input" required>
+                            <option value="">Select a package</option>
+                            <option value="starter">Starter</option>
+                            <option value="professional">Professional</option>
+                            <option value="enterprise">Enterprise</option>
+                            <option value="custom">Custom Solution</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" class="form-input" rows="4" placeholder="Tell us about your team and specific needs"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TikiData - Transforming Sports Through AI, LLMs, and NLP. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

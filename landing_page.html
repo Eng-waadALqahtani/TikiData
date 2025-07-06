@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikiData - AI-Powered Sports Strategy Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #6028e4;
+            --secondary-color: #4d1fd6;
+            --gradient-start: #6028e4;
+            --gradient-end: #d019a9;
+            --background-color: #0c0931;
+            --card-bg-color: #121549;
+            --text-color: #ffffff;
+            --light-text: #e0e0ff;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-button {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(96, 40, 228, 0.4);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(96, 40, 228, 0.6);
+        }
+
+        .hero {
+            padding: 100px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+            background-color: var(--background-color);
+        }
+
+        .sports-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            perspective-origin: center center;
+            z-index: 0;
+        }
+
+        .field-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(transparent 50%, rgba(96, 40, 228, 0.05) 50.1%),
+                radial-gradient(circle at center, rgba(96, 40, 228, 0.15) 0%, rgba(12, 9, 49, 0) 70%);
+            background-size: 40px 40px, 100% 100%;
+            transform: rotateX(60deg) scale(1.5);
+            transform-origin: center center;
+            opacity: 0.5;
+            animation: field-movement 15s infinite linear;
+        }
+
+        @keyframes field-movement {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 0 40px, 0 0; }
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            background: linear-gradient(145deg, var(--gradient-start), var(--gradient-end));
+            box-shadow: 0 0 20px rgba(96, 40, 228, 0.5);
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .ball-1 {
+            width: 60px;
+            height: 60px;
+            left: 15%;
+            top: 20%;
+            animation: ball-float-1 12s infinite;
+        }
+
+        .ball-2 {
+            width: 40px;
+            height: 40px;
+            right: 20%;
+            top: 30%;
+            animation: ball-float-2 8s infinite;
+        }
+
+        .ball-3 {
+            width: 30px;
+            height: 30px;
+            left: 45%;
+            bottom: 20%;
+            animation: ball-float-3 10s infinite;
+        }
+
+        @keyframes ball-float-1 {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            25% { transform: translate3d(80px, -40px, 100px) rotate(90deg); }
+            50% { transform: translate3d(160px, 0, 50px) rotate(180deg); }
+            75% { transform: translate3d(80px, 40px, 150px) rotate(270deg); }
+        }
+
+        @keyframes ball-float-2 {
+            0%, 100% { transform: translate3d(0, 0, 50px) rotate(0deg); }
+            25% { transform: translate3d(-60px, 30px, 100px) rotate(-90deg); }
+            50% { transform: translate3d(-120px, 0, 150px) rotate(-180deg); }
+            75% { transform: translate3d(-60px, -30px, 100px) rotate(-270deg); }
+        }
+
+        @keyframes ball-float-3 {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            33% { transform: translate3d(-70px, -50px, 80px) rotate(120deg); }
+            66% { transform: translate3d(70px, -30px, 120px) rotate(240deg); }
+        }
+
+        .player {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .player::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            top: -5px;
+            left: 5px;
+        }
+
+        .player-1 {
+            left: 25%;
+            bottom: 20%;
+            animation: player-move-1 15s infinite;
+        }
+
+        .player-2 {
+            right: 30%;
+            bottom: 15%;
+            animation: player-move-2 18s infinite;
+        }
+
+        @keyframes player-move-1 {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            25% { transform: translate3d(100px, -50px, 50px) scale(1.2); }
+            50% { transform: translate3d(200px, 0, 100px) scale(1); }
+            75% { transform: translate3d(100px, 50px, 150px) scale(0.8); }
+        }
+
+        @keyframes player-move-2 {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            25% { transform: translate3d(-120px, -30px, 100px) scale(0.8); }
+            50% { transform: translate3d(-240px, 0, 50px) scale(1); }
+            75% { transform: translate3d(-120px, 30px, 0) scale(1.2); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero .tagline {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero .tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+
+        .cta-button {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--text-color);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(96, 40, 228, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(96, 40, 228, 0.6);
+        }
+
+        .sports-section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sports-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .sport-card {
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            width: 450px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sport-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+        }
+
+        .sport-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .sport-card .icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .sport-card .icon i {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.5s ease;
+        }
+        
+        .sport-card:hover .icon i {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { 
+                transform: translateY(0);
+            }
+            50% { 
+                transform: translateY(-15px);
+            }
+        }
+        
+        .sport-card .icon::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 4px;
+            background: rgba(96, 40, 228, 0.3);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .sport-card:hover .icon::after {
+            opacity: 1;
+            animation: shadow-pulse 2s infinite;
+        }
+        
+        @keyframes shadow-pulse {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
+        .sport-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .sport-card p {
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .card-button {
+            background-color: rgba(96, 40, 228, 0.15);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            z-index: -1;
+        }
+
+        .card-button:hover {
+            color: var(--text-color);
+            box-shadow: 0 5px 15px rgba(96, 40, 228, 0.4);
+        }
+        
+        .card-button:hover::before {
+            width: 100%;
+        }
+
+        .features-section {
+            padding: 80px 0;
+            background-color: rgba(18, 21, 73, 0.5);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: rgba(12, 9, 49, 0.8);
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .tagline {
+                font-size: 2rem;
+            }
+            
+            .ball-1 {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .ball-2 {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .ball-3 {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sports-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .sport-card {
+                width: 100%;
+                max-width: 450px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.6rem;
+            }
+            
+            .ball-1 {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .ball-2 {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .ball-3 {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .player-1, .player-2 {
+                display: none;
+            }
+            
+            .field-lines {
+                transform: rotateX(50deg) scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="logo-text">TikiData</div>
+                </div>
+                <div>
+                    <a onclick="window.location.href='/request-demo'" class="nav-button">Request a demo for your own team</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="sports-background">
+            <div class="field-lines"></div>
+            <div class="ball ball-1"></div>
+            <div class="ball ball-2"></div>
+            <div class="ball ball-3"></div>
+            <div class="player player-1"></div>
+            <div class="player player-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>TikiData | Generative AI Built for Game Mastery</h1>
+                <h2 class="tagline">Win Smarter, Not Harder.</h2>
+                <p>TikiData enhances game strategy based on AI, LLMs Reasoning, and NLP, empowering sports teams with cutting-edge artificial intelligence, predictive modeling, and real-time tactical insights.</p>
+                <a onclick="window.location.href='/request-demo'" class="cta-button">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sports-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>AI-Powered Sports Intelligence</h2>
+                <p>Transform your team's performance with TikiData's predictive analytics and strategic insights</p>
+            </div>
+            <div class="sports-cards">
+                <div class="sport-card" onclick="window.location.href='/football'">
+                    <div class="icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Football Analytics</h3>
+                    <p>Access advanced analytics, match reports, and tactical insights for football teams. Get real-time performance analysis, opponent threat assessments, and formation recommendations based on AI-driven data models and computer vision.</p>
+                    <a href="/football" class="card-button">Launch Al-Hilal AI Platform</a>
+                </div>
+
+                <div class="sport-card" onclick="window.location.href='/basketball'">
+                    <div class="icon">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3>Basketball Analytics</h3>
+                    <p>Explore comprehensive analytics, game reports, and strategic insights for basketball teams. Leverage AI-powered performance analysis, opponent defensive patterns, and lineup optimization recommendations powered by machine learning.</p>
+                    <a href="/basketball" class="card-button">Launch New York Knicks AI Platform</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>AI Features</h2>
+                <p>How TikiData's artificial intelligence transforms team performance</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Team Analysis</h3>
+                    <p>Comprehensive team analytics and match analysis from sport analyzers powered by LLMs and AI agents.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Lineup Prediction</h3>
+                    <p>AI-driven algorithms that predict optimal player lineups based on opponent strategies and player performance metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-forward"></i>
+                    </div>
+                    <h3>Next Line Prediction</h3>
+                    <p>Cutting-edge NLP and AI agents that analyze game flow to predict the most strategic next plays and movements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Game Reports</h3>
+                    <p>Comprehensive automated reports generated by LLMs that provide in-depth analysis of past games and performance metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Opponent Analysis</h3>
+                    <p>Detailed opponent scouting reports and weaknesses identification using advanced AI pattern recognition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Team Performance</h3>
+                    <p>Comprehensive tracking and analysis of team performance metrics using AI agents to identify improvement areas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Game Strategy</h3>
+                    <p>AI-powered strategic recommendations and tactical adjustments based on real-time game situations and opponent patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TikiData - Transforming Sports Through AI, LLMs, and NLP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // No JS animation handlers needed - using CSS only for better performance and reliability
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('TikiData website loaded successfully!');
+        });
+    </script>
+</body>
+</html>
